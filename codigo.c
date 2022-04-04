@@ -1,6 +1,11 @@
 #include<stdlib.h>
 #include<stdio.h>
 
+int Adicao(int num1, int num2)
+{
+    return num1+num2;
+}
+
 int Potencia(int base, int expoente)
 {
     if(expoente == 0)
@@ -34,13 +39,14 @@ int TransformaDec(int binario)
 
 int main(void)
 {
-    int bin1, bin2, dec=0;
+    int bin1, bin2, dec1=0, dec2=0, resultado;
     char operacao;
     //scanf("%c", &operacao);
     scanf("%d", &bin1);
-    //scanf("%d", &bin2);
-    dec = RetornaBin(bin1);
-    //printf("Valor em decimal: %d",dec);
-
+    scanf("%d", &bin2);
+    dec1 = TransformaDec(bin1);
+    dec2 = TransformaDec(bin2);
+    resultado = Adicao(dec1,dec2);
+    printf("Resultado(+)= %d",resultado);
     return 0;
 }
