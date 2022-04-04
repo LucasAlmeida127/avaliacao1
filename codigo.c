@@ -1,32 +1,32 @@
 #include<stdlib.h>
 #include<stdio.h>
 
-int Adicao(int num1, int num2)
+int Adicao(int num1, int num2) //Função que realiza adição
 {
     return num1+num2;
 }
 
-int Subtracao(int num1, int num2)
+int Subtracao(int num1, int num2) //Função que realiza subtração
 {
     return num1-num2;
 }
 
-int Multiplicacao(int num1, int num2)
+int Multiplicacao(int num1, int num2) //Função que realiza multiplicação
 {
     return num1*num2;
 }
 
-int Divisao(int num1, int num2)
+int Divisao(int num1, int num2) //Função que realiza divisão
 {
     return num1/num2;
 }
 
-int Resto(int num1, int num2)
+int Resto(int num1, int num2) //Função que calcula o resto
 {
     return num1%num2;
 }
 
-int Potencia(int base, int expoente)
+int Potencia(int base, int expoente) //Função recursiva que realiza potenciação sem o uso de bibliotecas externas
 {
     if(expoente == 0)
         return 1;
@@ -34,7 +34,7 @@ int Potencia(int base, int expoente)
         return (base * Potencia(base, expoente-1));
 }
 
-int RetornaBin(int decimal)
+int RetornaBin(int decimal) //Função que recebe decimal e retorna binário
 {
     int aux, i;
     for (i = 7 ; i>= 0 ; i--){
@@ -46,7 +46,7 @@ int RetornaBin(int decimal)
     }
 }
 
-int TransformaDec(int binario)
+int TransformaDec(int binario) //Função que recebe binário e retorna decimal
 {
     int decimal = 0, i;
     for(i = 0; binario > 0; i++)
@@ -57,18 +57,19 @@ int TransformaDec(int binario)
     return decimal;
 }
 
-int main(void)
+int main(void) //Função main
 {
     int bin1, bin2, resultado_bin;
     int dec1=0, dec2=0, resultado_dec=0;
     char operacao;
-    scanf("%c", &operacao);
+    scanf("%c", &operacao); //Entrada
     scanf("%d", &bin1);
     scanf("%d", &bin2);
     dec1 = TransformaDec(bin1);
     dec2 = TransformaDec(bin2);
 
-    if (operacao == '+'){
+    // Verificando a operação escolhida pelo usuário
+    if (operacao == '+'){           
         resultado_dec = Adicao(dec1,dec2);
     }
     else if (operacao == '-'){
@@ -87,8 +88,9 @@ int main(void)
         return 0;
     }
     
+    // Saída
     printf("--------\n");
-    if (resultado_dec > 255){
+    if (resultado_dec > 255){ //Verificando a quantidade de bits
         printf("Total de bits excedido");
     } else {
         resultado_bin = RetornaBin(resultado_dec);
