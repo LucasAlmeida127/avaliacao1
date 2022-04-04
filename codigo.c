@@ -59,7 +59,8 @@ int TransformaDec(int binario)
 
 int main(void)
 {
-    int bin1, bin2, dec1=0, dec2=0, resultado;
+    int bin1, bin2, resultado_bin;
+    int dec1=0, dec2=0, resultado_dec=0;
     char operacao;
     scanf("%c", &operacao);
     scanf("%d", &bin1);
@@ -68,24 +69,27 @@ int main(void)
     dec2 = TransformaDec(bin2);
 
     if (operacao == '+'){
-        resultado = Adicao(dec1,dec2);
+        resultado_dec = Adicao(dec1,dec2);
     }
     else if (operacao == '-'){
-        resultado = Subtracao(dec1,dec2);
+        resultado_dec = Subtracao(dec1,dec2);
     }
     else if (operacao == '*'){
-        resultado = Multiplicacao(dec1,dec2);
+        resultado_dec = Multiplicacao(dec1,dec2);
     }
     else if (operacao == '/'){
-        resultado = Divisao(dec1,dec2);
+        resultado_dec = Divisao(dec1,dec2);
     }
     else if (operacao == '%'){
-        resultado = Resto(dec1,dec2);
+        resultado_dec = Resto(dec1,dec2);
     } else {
         printf("Operador nao existe");
         return 0;
     }
 
-    printf("Resultado= %d",resultado);
+    printf("--------\n");
+    printf("Resultado em decimal: %d\n", resultado_dec);
+    printf("Resultado em binario: ");
+    resultado_bin = RetornaBin(resultado_dec);
     return 0;
 }
