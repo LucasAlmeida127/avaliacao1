@@ -86,10 +86,12 @@ int main(void)
         printf("Operador nao existe");
         return 0;
     }
-
+    
     printf("--------\n");
-    printf("Resultado em decimal: %d\n", resultado_dec);
-    printf("Resultado em binario: ");
-    resultado_bin = RetornaBin(resultado_dec);
+    if (resultado_dec > 255){
+        printf("Total de bits excedido");
+    } else {
+        resultado_bin = RetornaBin(resultado_dec);
+    }
     return 0;
 }
