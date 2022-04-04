@@ -9,6 +9,18 @@ int Potencia(int base, int expoente)
         return (base * Potencia(base, expoente-1));
 }
 
+int RetornaBin(int decimal)
+{
+    int aux, i;
+    for (i = 7 ; i>= 0 ; i--){
+        aux = decimal >> i;
+        if (aux & 1){
+            printf("1");
+        } else {
+            printf("0");}
+    }
+}
+
 int TransformaDec(int binario)
 {
     int decimal = 0, i;
@@ -27,8 +39,8 @@ int main(void)
     //scanf("%c", &operacao);
     scanf("%d", &bin1);
     //scanf("%d", &bin2);
-    dec = TransformaDec(bin1);
-    printf("Valor em decimal: %d",dec);
+    dec = RetornaBin(bin1);
+    //printf("Valor em decimal: %d",dec);
 
     return 0;
 }
