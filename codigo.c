@@ -16,6 +16,11 @@ int Multiplicacao(int num1, int num2)
     return num1*num2;
 }
 
+int Divisao(int num1, int num2)
+{
+    return num1/num2;
+}
+
 int Potencia(int base, int expoente)
 {
     if(expoente == 0)
@@ -56,7 +61,7 @@ int main(void)
     scanf("%d", &bin2);
     dec1 = TransformaDec(bin1);
     dec2 = TransformaDec(bin2);
-    resultado = Multiplicacao(dec1,dec2);
-    printf("Resultado(*)= %d",resultado);
+    resultado = Divisao(dec1,dec2);
+    printf("Resultado(/)= %d",resultado);
     return 0;
 }
